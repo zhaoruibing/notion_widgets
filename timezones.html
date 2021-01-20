@@ -11,10 +11,15 @@
         body {
           font-family: 'Arial', sans-serif;
           color: #37352f;
+          background-color: #ffffff;
+          margin-top: 0px;
+          margin-bottom: 0px;
         }
 
         ul {
           list-style: none;
+          margin-block-start: 0em;
+          margin-block-end: 0em;
           padding: 0;
           display: flex;
           flex-direction: column;
@@ -68,7 +73,7 @@
           $(".time").empty();
 
           for (var i = 0; i < timezones.length; i++) {
-            let currentTime = now.tz(timezones[i].zone).format('MM-DD HH:mm');
+            let currentTime = now.tz(timezones[i].zone).format('MM/DD HH:mm');
             let cityName = timezones[i].name
             $(".time").append(`<li> <span class='city-name'> ${cityName} </span> <span class='digital-clock'> ${currentTime} </span></li>`);
           };
