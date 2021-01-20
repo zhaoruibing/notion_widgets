@@ -48,18 +48,7 @@
             transform: translateX(0);
             transition: all 0.3s ease;
         }
-        table.actiu {
-            transform: translateX(0px)top;
-        }
-        table.inactiu {
-            transition: all 0.3s 0.01s ease;
-        }
-        table.amagat-esquerra {
-            transform: translateX(-299px);
-        }
-        table.amagat-dreta {
-            transform: translateX(300px);
-        }
+
         td,th {
             text-align: center;
             background-color: #fff;
@@ -318,7 +307,12 @@
 
         }
 
-        calendar(document.getElementById('calendar'), new Date());
+        function updateCalendar() {
+            calendar(document.getElementById('calendar'), new Date());
+        }
+
+        updateCalendar();
+        setInterval(updateCalendar, 60000); // update every minute
     </script>
 </body>
 </html>
